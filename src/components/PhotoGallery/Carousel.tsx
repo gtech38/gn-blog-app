@@ -91,6 +91,15 @@ const CarouselWithMockData: React.FC = () => {
 
   //TODO: Change button colors base on image a
   return (
+    <div>
+    <style>
+      {`.custom-tag {
+              max-width: 100%;
+              max-height: 100%;
+              
+              background: black;
+            }`}
+    </style>
     <Carousel
       activeIndex={activeIndex}
       next={next}
@@ -116,6 +125,7 @@ const CarouselWithMockData: React.FC = () => {
         onClickHandler={next}
       />
     </Carousel>
+    </div>
   );
 }
 

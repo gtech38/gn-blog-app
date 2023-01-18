@@ -18,18 +18,23 @@ const SiteNav: React.FC = () => {
   const toggleActivePage = (selectedPage: string) => setActivePage(selectedPage);
 
   //TODO: Add a function to handle the click of a nav item
-  function handleNavItemClick() {
+  function handleHomeItemClick() {
     console.log("Nav Item Clicked");
+    setActivePage('home');
   } 
+
+  function handleNavItemClick(){
+    console.log("Nav Item Clicked");
+  }
 
   return (
     <div>
-      <Navbar color="faded" light>
+      {/* <Navbar color="faded" light>
         <NavbarToggler onClick={toggleNavbar} className="me-2" />
         <Collapse isOpen={!collapsed} navbar>
           <Nav >
           <NavItem>
-            <NavLink href="/" onClick={handleNavItemClick}>Home</NavLink>
+            <NavLink href="/" onClick={handleHomeItemClick}>Home</NavLink>
           </NavItem>
           <NavItem>
             <NavLink href="/pictures/" onClick={handleNavItemClick}>Pictures</NavLink>
@@ -42,7 +47,7 @@ const SiteNav: React.FC = () => {
           </NavItem>
           </Nav>
         </Collapse>
-      </Navbar>
+      </Navbar> */}
       {activePage === 'home' && <HomePage/>}
       {activePage === 'pictures' && <PhotoGalleryPage />}
       {activePage === 'contact' && <ContactMePage />}
