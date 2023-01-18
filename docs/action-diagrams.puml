@@ -1,0 +1,9 @@
+@startuml
+
+database "Image Database" as db
+
+component "Photo Gallery" as gallery
+database "Image Store" as store
+
+
+@enduml
