@@ -1,4 +1,5 @@
 import React from 'react';
+import CarouselOfPictures from '../PhotoGallery/Carousel';
 
 const PhotoGalleryPage: React.FC = () => {
 //TODO: Add Title and Description
@@ -9,6 +10,8 @@ return (
     <div>
         <h1>Photo Gallery</h1>
         <p>Here are some of my favorite pictures!</p>
+        <CarouselOfPictures />
+
     </div>
 )
 

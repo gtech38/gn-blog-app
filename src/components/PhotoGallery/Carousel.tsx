@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   Carousel,
   CarouselItem,
   CarouselControl,
   CarouselIndicators,
   CarouselCaption,
-} from 'reactstrap';
-
+} from "reactstrap";
 
 //TODP: Move this to a separate file
 export type pictureItem = {
@@ -21,37 +20,36 @@ export type pictureItem = {
 //TODO: Pull Pictures out of REDUX Store
 const items: pictureItem[] = [
   {
-    src: 'https://picsum.photos/id/123/1200/400',
-    altText: 'Slide 1',
-    caption: 'Slide 1',
-    key: 1
+    src: "https://picsum.photos/id/123/1200/400",
+    altText: "Slide 1",
+    caption: "Slide 1",
+    key: 1,
   },
   {
-    src: 'http://localhost:8080/MilkywayWindmillLong.jpg',
-    altText: 'Slide 2',
-    caption: 'Slide 2',
-    key: 2
+    src: "http://localhost:8080/MilkywayWindmillLong.jpg",
+    altText: "Slide 2",
+    caption: "Slide 2",
+    key: 2,
   },
   {
-    src: 'http://localhost:8080/MilkywayWindmillFlashlight.jpg',
-    altText: 'Slide 3',
-    caption: 'Slide 3',
-    key: 3
+    src: "http://localhost:8080/MilkywayWindmillFlashlight.jpg",
+    altText: "Slide 3",
+    caption: "Slide 3",
+    key: 3,
   },
   {
-    src: 'http://localhost:8080/BarnPolaris.jpg',
-    altText: 'Slide 4',
-    caption: 'Slide 4',
-    key: 4
+    src: "http://localhost:8080/BarnPolaris.jpg",
+    altText: "Slide 4",
+    caption: "Slide 4",
+    key: 4,
   },
   {
-    src: 'http://localhost:8080/MilkywayWindmillWide.jpg',
-    altText: 'Slide 5',
-    caption: 'Slide 5',
-    key: 5
+    src: "http://localhost:8080/MilkywayWindmillWide.jpg",
+    altText: "Slide 5",
+    caption: "Slide 5",
+    key: 5,
   },
 ];
-
 
 const CarouselWithMockData: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -92,42 +90,41 @@ const CarouselWithMockData: React.FC = () => {
   //TODO: Change button colors base on image a
   return (
     <div>
-    <style>
-      {`.custom-tag {
+      <style>
+        {`.custom-tag {
               max-width: 100%;
               max-height: 100%;
-              
               background: black;
             }`}
-    </style>
-    <Carousel
-      activeIndex={activeIndex}
-      next={next}
-      previous={previous}
-      // dark={true}
-      keyboard={true}
-      hover="true"
-    >
-      <CarouselIndicators
-        items={items}
+      </style>
+      <Carousel
         activeIndex={activeIndex}
-        onClickHandler={goToIndex}
-      />
-      {slides}
-      <CarouselControl
-        direction="prev"
-        directionText="Previous"
-        onClickHandler={previous}
-      />
-      <CarouselControl
-        direction="next"
-        directionText="Next"
-        onClickHandler={next}
-      />
-    </Carousel>
+        next={next}
+        previous={previous}
+        // dark={true}
+        keyboard={true}
+        hover="true"
+      >
+        <CarouselIndicators
+          items={items}
+          activeIndex={activeIndex}
+          onClickHandler={goToIndex}
+        />
+        {slides}
+        <CarouselControl
+          direction="prev"
+          directionText="Previous"
+          onClickHandler={previous}
+        />
+        <CarouselControl
+          direction="next"
+          directionText="Next"
+          onClickHandler={next}
+        />
+      </Carousel>
     </div>
   );
-}
+};
 
 const CarouselOfPictures: React.FC = () => {
   return (
@@ -135,6 +132,6 @@ const CarouselOfPictures: React.FC = () => {
       <CarouselWithMockData />
     </div>
   );
-}
+};
 
 export default CarouselOfPictures;
